@@ -52,8 +52,9 @@ def parse_config():
     parser.add_argument("--root_store_path_octree", type=str, default='data_octree', help='root store path of laz baseline')
     parser.add_argument("--query_path", type=str, default='query', help='root store path')
 
-
-
+    parser.add_argument("--same_segment", action='store_true', default=False, help='whether to use same segment length')
+    parser.add_argument("--time_budget", type=float, default=0.25, help='time budget ratio for segmentation')
+    parser.add_argument("--soft_distance_ratio", type=float, default=2.0, help='soft distance ratio for deduplication matching')
 
 
 

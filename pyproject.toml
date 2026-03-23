@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "duster-pcdb"
+version = "0.1.0"
+description = "DUSTER: Deduplication Framework for Efficient Point Cloud Storage and Retrieval"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "laspy[laszip]",
+    "pulp",
+    "joblib",
+    "pymorton",
+    "bitarray",
+    "networkx",
+]
+
+[project.optional-dependencies]
+gpu = ["pycuda", "faiss-gpu"]
+eval = ["torch", "open3d"]
+
+[tool.setuptools.packages.find]
+include = ["duster*"]

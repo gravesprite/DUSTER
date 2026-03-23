@@ -1,29 +1,23 @@
 import os
 import numpy as np
-# from utils.deduplicatation import Deduplicator
-from utils.deduplicatation_2 import Deduplicator
 
-from utils.index import Indexer, SequenceIndexer
-from utils.disk_manage_las import DiskManager
-from utils.logger import create_logger
-
-from utils.segmentation import  RLSegmentator
-
-from utils.segmentation_2 import Segmentator
+from duster.core.deduplicator import Deduplicator
+from duster.core.indexer import Indexer, SequenceIndexer
+from duster.core.disk_manager import DiskManager
+from duster.utils.logger import create_logger
+from duster.segmentation.segmentator import Segmentator
+from duster.evaluation.evaluator import Evaluator
+from duster.query.loader import load_queries
 
 from configs.config import parse_config
-
-from utils.retrieve_eva import Evaluator
-from query.load_query import load_queries
-
 
 import laspy
 from laspy.compression import LazBackend
 import shutil
 
-from baselines.laz_index import LazIndex
-from baselines.raw_index import RawIndexer
-from baselines.octree_index import OctreeIndexer
+from duster.baselines.laz_index import LazIndex
+from duster.baselines.raw_index import RawIndexer
+from duster.baselines.octree_index import OctreeIndexer
 import json
 import time
 from scipy.spatial.transform import Rotation as R
